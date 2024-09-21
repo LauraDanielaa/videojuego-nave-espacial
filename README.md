@@ -3,7 +3,7 @@ En este repositorio se encuentra un video juego el cual consiste en que una nave
 
 Este juego se diseño en el engine de godot 
 
-##Requerimientos 
+## Requerimientos 
 
 - la nave debe moverse con las flechas direccionales hacia arriba, abajo, derecha e izquierda
 - debe disparar al hacer click con el mouse
@@ -11,7 +11,7 @@ Este juego se diseño en el engine de godot
 - deben generarse "asteroides" de forma aleatoria
 - si un asteroide le pega a la nave pierde
 
-##Opcional
+## Opcional
 - puede tener un menu para iniciar
 - al perder debe salir game over
 - puede tener un boton para reiniciar
