@@ -11,8 +11,8 @@ Este juego se diseño en el engine de godot
 - deben generarse "asteroides" de forma aleatoria
 - si un asteroide le pega a la nave pierde
 
-opcional
--puede tener un menu para iniciar
--al perder debe salir game over
--puede tener un boton para reiniciar
--puede tener efectos de sonidos al disparar y al perder
+##Opcional
+- puede tener un menu para iniciar
+- al perder debe salir game over
+- puede tener un boton para reiniciar
+- puede tener efectos de sonidos al disparar y al perder
