@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqbrx2mgxius3"]
+
+[ext_resource type="Script" path="res://Enemigos/asteroide_.gd" id="1_m0bqh"]
+[ext_resource type="Texture2D" uid="uid://c47bk7q7n5gqt" path="res://ilustraciones/asteroide.png" id="1_yoffp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_upg3j"]
+
+[node name="Asteroide_" type="RigidBody2D"]
+script = ExtResource("1_m0bqh")
+
+[node name="Asteroide" type="Sprite2D" parent="."]
+position = Vector2(169.875, -1.43051e-05)
+scale = Vector2(0.157812, 0.1475)
+texture = ExtResource("1_yoffp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(168, 3)
+scale = Vector2(5.6, 5.68)
+shape = SubResource("CircleShape2D_upg3j")

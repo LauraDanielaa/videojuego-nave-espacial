@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxju454bfhc75"]
+
+[ext_resource type="Script" path="res://Enemigos/alien_.gd" id="1_kl2a7"]
+[ext_resource type="Texture2D" uid="uid://cb7x41livfg3n" path="res://ilustraciones/alien_juju.png" id="1_xt3ej"]
+
+[node name="Alien_" type="RigidBody2D"]
+script = ExtResource("1_kl2a7")
+
+[node name="AlienJuju" type="Sprite2D" parent="."]
+position = Vector2(216, -1)
+scale = Vector2(0.479999, 0.52)
+texture = ExtResource("1_xt3ej")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(165, 1, 166, -17, 169, -28, 176, -40, 176, -40, 190, -56, 205, -62, 220, -64, 234, -61, 245, -55, 256, -43, 263, -28, 267, -4, 265, 4, 279, 7, 289, 13, 296, 26, 294, 34, 286, 42, 275, 49, 264, 53, 255, 64, 252, 75, 243, 77, 235, 70, 217, 74, 198, 72, 188, 77, 178, 70, 178, 63, 169, 54, 147, 45, 137, 34, 136, 23, 145, 12)

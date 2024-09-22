@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbrpm1myxeqj1"]
+
+[ext_resource type="Texture2D" uid="uid://ctmxlmvihemhb" path="res://ilustraciones/naveEspacial.webp" id="1_1gogd"]
+[ext_resource type="Script" path="res://Nave_Espacial/nave_espacial.gd" id="1_kat1t"]
+
+[node name="NaveEspacial" type="CharacterBody2D"]
+position = Vector2(565, 443)
+scale = Vector2(0.138945, 0.0823137)
+script = ExtResource("1_kat1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-150, -245.5)
+scale = Vector2(0.75, 0.744271)
+texture = ExtResource("1_1gogd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-151, -211)
+scale = Vector2(0.830066, 0.731098)
+polygon = PackedVector2Array(-391, -109, -300, -502, -194, -773, -87.9449, -958.832, 85.5354, -975.245, 183, -713, 289, -441, 349, -230, 364, -18, 546, 238, 485, 329, 274, 314, 153, 374, 228, 540, 228, 691, 108, 691, 153, 827, 32, 782, -13, 903, -74, 812, -179, 812, -209, 722, -194, 571, -225, 374, -436, 374, -557, 284)
