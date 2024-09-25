@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgv3365t6yoe5"]
+[gd_scene load_steps=7 format=3 uid="uid://dgv3365t6yoe5"]
 
+[ext_resource type="Script" path="res://Level1/level_1.gd" id="1_q00a6"]
 [ext_resource type="Texture2D" uid="uid://bb8dcsilymowd" path="res://ilustraciones/Galaxia.png" id="1_vodjq"]
 [ext_resource type="PackedScene" uid="uid://cbrpm1myxeqj1" path="res://Nave_Espacial/nave_espacial.tscn" id="2_dhwgb"]
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]
+[ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/munición_.tscn" id="5_6krxe"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" node_paths=PackedStringArray("municion")]
+script = ExtResource("1_q00a6")
+municion = NodePath("Munición_")
 
 [node name="Galaxia" type="Sprite2D" parent="."]
 position = Vector2(572.75, 327.75)
@@ -20,14 +24,22 @@ position = Vector2(-92, 109)
 [node name="Alien_2" parent="TotalAliens" instance=ExtResource("3_i75vx")]
 position = Vector2(803, 441)
 
-[node name="Asteroide_" parent="." instance=ExtResource("4_7mqxw")]
-position = Vector2(822, 96)
-
-[node name="Asteroide_2" parent="." instance=ExtResource("4_7mqxw")]
-position = Vector2(222, 209)
-
-[node name="Asteroide_3" parent="." instance=ExtResource("4_7mqxw")]
-position = Vector2(33, 510)
-
 [node name="NaveEspacial" parent="." instance=ExtResource("2_dhwgb")]
 position = Vector2(572, 383)
+
+[node name="TotalAsteroides" type="Node2D" parent="."]
+
+[node name="Asteroide_" parent="TotalAsteroides" instance=ExtResource("4_7mqxw")]
+position = Vector2(822, 96)
+
+[node name="Asteroide_2" parent="TotalAsteroides" instance=ExtResource("4_7mqxw")]
+position = Vector2(222, 209)
+
+[node name="Asteroide_3" parent="TotalAsteroides" instance=ExtResource("4_7mqxw")]
+position = Vector2(33, 510)
+
+[node name="Munición_" parent="." instance=ExtResource("5_6krxe")]
+position = Vector2(550, 268)
+
+[connection signal="fired" from="NaveEspacial" to="." method="_on_nave_espacial_fired"]
+[connection signal="area_exited" from="Munición_" to="NaveEspacial" method="_on_munición__area_exited"]

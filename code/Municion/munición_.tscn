@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqw1o4u4jvwg"]
+
+[ext_resource type="Script" path="res://Municion/munición_.gd" id="1_hbbay"]
+[ext_resource type="Texture2D" uid="uid://cmtfjmc8v374h" path="res://ilustraciones/municiones.png" id="1_qdws7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4ulb"]
+radius = 5.0
+
+[node name="Munición_" type="Area2D"]
+position = Vector2(629, 530)
+script = ExtResource("1_hbbay")
+
+[node name="Municiones" type="Sprite2D" parent="."]
+scale = Vector2(0.0303294, 0.037999)
+texture = ExtResource("1_qdws7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.880001, 1.08)
+shape = SubResource("CircleShape2D_j4ulb")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
