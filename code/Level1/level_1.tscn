@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgv3365t6yoe5"]
+[gd_scene load_steps=12 format=3 uid="uid://dgv3365t6yoe5"]
 
 [ext_resource type="Script" path="res://Level1/level_1.gd" id="1_q00a6"]
 [ext_resource type="Texture2D" uid="uid://bb8dcsilymowd" path="res://ilustraciones/Galaxia.png" id="1_vodjq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]
 [ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/municion.tscn" id="5_6krxe"]
+[ext_resource type="Script" path="res://Level1/game_controller.gd" id="7_wjr5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6v8o"]
 size = Vector2(1386, 81)
@@ -70,6 +71,9 @@ shape = SubResource("RectangleShape2D_jbebv")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Marco"]
 position = Vector2(1230, 341)
 shape = SubResource("RectangleShape2D_lyyqf")
+
+[node name="Game_controller" type="Node2D" parent="."]
+script = ExtResource("7_wjr5o")
 
 [connection signal="fired" from="NaveEspacial" to="." method="_on_nave_espacial_fired"]
 [connection signal="area_exited" from="Munición_" to="NaveEspacial" method="_on_munición__area_exited"]

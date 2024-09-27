@@ -2,10 +2,12 @@ class_name NaveEspacial
 extends CharacterBody2D
 
 signal fired
+signal nave_hurt()
 var control_disparo = true 
 @export var gravity = 100
 @export var speed = 400
 @export var float_force = 1000
+@export var vida = 1
 
 func _physics_process(delta):
 	
@@ -25,9 +27,20 @@ func _physics_process(delta):
 	var direction =  Input.get_vector("izquierda", "derecha", "arriba", "abajo")
 	velocity = direction * speed
 	
+
 	move_and_slide()
-
-
+	
+#func _on_DamageArea_body_entered(body):
+	
+			
+func _on_damage_area_body_entered(body: Node2D) -> void:
+	if body is Asteroide_:
+		vida -= 1
+		if vida <= 0:
+			print("MUERTO")
+			get_tree().quit()  # Cerrar el juego
+				
+				
 func _process(delta):
 	
 	if Input.is_action_just_pressed("disparar"):

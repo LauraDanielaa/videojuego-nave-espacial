@@ -14,3 +14,10 @@ func _process(delta: float):
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void: #Desaparezca la bala cuando se salga del viewport
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Asteroide_:
+		emit_signal("asteroide hurt")
+		body.queue_free()  # Destruir el asteroide
+		queue_free()  # Destruir la bala
