@@ -1,3 +1,4 @@
+class_name municion 
 extends Area2D
 
 @export var speed = 300

@@ -5,11 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cbrpm1myxeqj1" path="res://Nave_Espacial/nave_espacial.tscn" id="2_dhwgb"]
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]
-[ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/munición_.tscn" id="5_6krxe"]
+[ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/municion.tscn" id="5_6krxe"]
 
-[node name="Level 1" type="Node2D" node_paths=PackedStringArray("municion")]
+[node name="Level 1" type="Node2D"]
 script = ExtResource("1_q00a6")
-municion = NodePath("Munición_")
 
 [node name="Galaxia" type="Sprite2D" parent="."]
 position = Vector2(572.75, 327.75)
@@ -25,7 +24,7 @@ position = Vector2(-92, 109)
 position = Vector2(803, 441)
 
 [node name="NaveEspacial" parent="." instance=ExtResource("2_dhwgb")]
-position = Vector2(572, 383)
+position = Vector2(579, 416)
 
 [node name="TotalAsteroides" type="Node2D" parent="."]
 
@@ -39,7 +38,7 @@ position = Vector2(222, 209)
 position = Vector2(33, 510)
 
 [node name="Munición_" parent="." instance=ExtResource("5_6krxe")]
-position = Vector2(550, 268)
+position = Vector2(1240, 109)
 
 [connection signal="fired" from="NaveEspacial" to="." method="_on_nave_espacial_fired"]
 [connection signal="area_exited" from="Munición_" to="NaveEspacial" method="_on_munición__area_exited"]
