@@ -13,30 +13,27 @@ func _physics_process(delta):
 	
 	# Aplicar la gravedad (si es necesario
 	
+		# Girar la nave hacia el puntero del mouse
+	var mouse_position = get_global_mouse_position()
+	look_at(mouse_position)
+	
 	#Gravedad
 	if not is_on_floor():
 		velocity.y = velocity.y + gravity * delta
 	
-	#Movimiento horizontal
-	var direction = Input.get_axis("izquierda", "derecha")
-	velocity.x = speed * direction 
-
-   #Movimiento vertical
-	var up_and_down = Input.get_axis("arriba", "abajo")
-	velocity.y = speed * up_and_down 
-	
- # Girar la nave hacia el puntero del mouse
-	look_at(get_global_mouse_position())
+	#movimiento 
+	var direction =  Input.get_vector("izquierda", "derecha", "arriba", "abajo")
+	velocity = direction * speed
 	
 	move_and_slide()
 
+
 func _process(delta):
-	if Input.is_action_pressed("disparar") and control_disparo:
-		print("fire...")
-		control_disparo = false
-		$Timer.start()
-		emit_signal("fired", $bullet_position.global_position ) #Se le pasa el parametro bullet_position para indicarle en donde quiero que salga el disparo 
-		#posicion_global con respecto a la pantalla 
+	
+	if Input.is_action_just_pressed("disparar"):
+		var bullet_direction = Vector2.RIGHT.rotated(rotation) # Obtener la dirección hacia donde apunta la nave
+		emit_signal("fired", $bullet_position.global_position, bullet_direction) # Pasar la posición y la dirección de la bala		
+
 
 func _on_timer_timeout() -> void:
 	control_disparo = true 

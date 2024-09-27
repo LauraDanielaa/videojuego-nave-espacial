@@ -6,18 +6,21 @@
 [node name="NaveEspacial" type="CharacterBody2D"]
 position = Vector2(19, 671)
 scale = Vector2(0.138945, 0.0823137)
+collision_mask = 6
 script = ExtResource("1_kat1t")
 
 [node name="bullet_position" type="Marker2D" parent="."]
-position = Vector2(-28.7884, -886.852)
+position = Vector2(1014.79, -12.1487)
 scale = Vector2(188.967, -30.8565)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.744271)
+rotation = 1.5708
+scale = Vector2(0.938, 0.438)
 texture = ExtResource("1_1gogd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.830066, 0.731098)
+rotation = 1.5708
+scale = Vector2(0.938, 0.438)
 polygon = PackedVector2Array(-391, -109, -300, -502, -194, -773, -87.9449, -958.832, 85.5354, -975.245, 183, -713, 289, -441, 349, -230, 364, -18, 546, 238, 485, 329, 274, 314, 153, 374, 228, 540, 228, 691, 108, 691, 153, 827, 32, 782, -13, 903, -74, 812, -179, 812, -209, 722, -194, 571, -225, 374, -436, 374, -557, 284)
 
 [node name="Timer" type="Timer" parent="."]

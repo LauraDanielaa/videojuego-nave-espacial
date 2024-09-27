@@ -10,6 +10,7 @@ var screen_size = Vector2()  # Declaramos screen_size como una variable global
 func _ready() -> void:
 	# Utilizar un método para saber el tamaño que tiene el viewport
 	screen_size = get_viewport().get_visible_rect().size  # (1152, 648)
+	screen_size *= 1.1
 	
 	# Asignación de una dirección aleatoria y una velocidad constante 
 	randomize()  

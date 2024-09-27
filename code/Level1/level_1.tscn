@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgv3365t6yoe5"]
+[gd_scene load_steps=11 format=3 uid="uid://dgv3365t6yoe5"]
 
 [ext_resource type="Script" path="res://Level1/level_1.gd" id="1_q00a6"]
 [ext_resource type="Texture2D" uid="uid://bb8dcsilymowd" path="res://ilustraciones/Galaxia.png" id="1_vodjq"]
@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]
 [ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/municion.tscn" id="5_6krxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6v8o"]
+size = Vector2(1386, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvfuj"]
+size = Vector2(133, 974)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbebv"]
+size = Vector2(1500, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyyqf"]
+size = Vector2(167, 956)
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_q00a6")
@@ -39,6 +51,25 @@ position = Vector2(33, 510)
 
 [node name="Munición_" parent="." instance=ExtResource("5_6krxe")]
 position = Vector2(1240, 109)
+
+[node name="Marco" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marco"]
+position = Vector2(555, -52)
+shape = SubResource("RectangleShape2D_g6v8o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Marco"]
+position = Vector2(-73, 328)
+shape = SubResource("RectangleShape2D_kvfuj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Marco"]
+position = Vector2(571, 732)
+shape = SubResource("RectangleShape2D_jbebv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Marco"]
+position = Vector2(1230, 341)
+shape = SubResource("RectangleShape2D_lyyqf")
 
 [connection signal="fired" from="NaveEspacial" to="." method="_on_nave_espacial_fired"]
 [connection signal="area_exited" from="Munición_" to="NaveEspacial" method="_on_munición__area_exited"]
