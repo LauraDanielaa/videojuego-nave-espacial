@@ -80,7 +80,12 @@ shape = SubResource("RectangleShape2D_lyyqf")
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("7_wjr5o")
 
+[node name="Timer" type="Timer" parent="GameController"]
+autostart = true
+
 [connection signal="fired" from="Spaceship" to="." method="_on_nave_espacial_fired"]
 [connection signal="spaceship_hurt" from="Spaceship" to="GameController" method="_on_spaceship_spaceship_hurt"]
 [connection signal="area_exited" from="Munición_" to="Spaceship" method="_on_munición__area_exited"]
 [connection signal="spaceship_hurt_updated" from="GameController" to="Life" method="_on_game_controller_spaceship_hurt_updated"]
+[connection signal="time_updated" from="GameController" to="Life" method="_on_game_controller_time_updated"]
+[connection signal="timeout" from="GameController/Timer" to="GameController" method="_on_timer_timeout"]
