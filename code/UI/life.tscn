@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ot5eu1h6rf6"]
+
+[ext_resource type="Texture2D" uid="uid://cdffre30g3av" path="res://ilustraciones/fondo.png" id="1_3t717"]
+[ext_resource type="Script" path="res://UI/life.gd" id="1_r22ms"]
+[ext_resource type="Texture2D" uid="uid://c6rflu2w1kaik" path="res://ilustraciones/life_heart.png" id="2_se4w4"]
+
+[node name="Life" type="CanvasLayer"]
+script = ExtResource("1_r22ms")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 17.0
+offset_right = -25.0
+offset_bottom = 57.0
+grow_horizontal = 0
+texture = ExtResource("1_3t717")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(15, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 61.0
+offset_right = -29.0
+offset_bottom = 106.0
+grow_horizontal = 0
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="LifeHeart1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_se4w4")
+expand_mode = 2
+
+[node name="LifeHeart2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_se4w4")
+expand_mode = 2
+
+[node name="LifeHeart3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_se4w4")
+expand_mode = 2

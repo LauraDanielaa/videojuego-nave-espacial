@@ -3,13 +3,22 @@
 [ext_resource type="Script" path="res://Enemigos/alien_.gd" id="1_kl2a7"]
 [ext_resource type="Texture2D" uid="uid://cb7x41livfg3n" path="res://ilustraciones/alien_juju.png" id="1_xt3ej"]
 
-[node name="Alien_" type="RigidBody2D"]
+[node name="Alien_" type="CharacterBody2D"]
+light_mask = 4
+scale = Vector2(0.64, 0.6)
+collision_layer = 2
 script = ExtResource("1_kl2a7")
 
-[node name="AlienJuju" type="Sprite2D" parent="."]
-position = Vector2(216, -1)
-scale = Vector2(0.479999, 0.52)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.76, 0.769821)
 texture = ExtResource("1_xt3ej")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(165, 1, 166, -17, 169, -28, 176, -40, 176, -40, 190, -56, 205, -62, 220, -64, 234, -61, 245, -55, 256, -43, 263, -28, 267, -4, 265, 4, 279, 7, 289, 13, 296, 26, 294, 34, 286, 42, 275, 49, 264, 53, 255, 64, 252, 75, 243, 77, 235, 70, 217, 74, 198, 72, 188, 77, 178, 70, 178, 63, 169, 54, 147, 45, 137, 34, 136, 23, 145, 12)
+light_mask = 2
+polygon = PackedVector2Array(-90, 1, -85, -35, -75, -60, -52, -82, -19, -94, 20, -96, 50, -80, 76, -54, 87, -29, 85, 1, 113, 11, 131, 28, 130, 54, 118, 71, 94, 78, 76, 88, 65, 100, 60, 115, 40, 123, 27, 114, 4, 117, -16, 115, -32, 113, -48, 123, -61, 113, -70, 100, -87, 85, -106, 71, -121, 67, -137, 49, -135, 36, -126, 18)
+
+[node name="DamageAreaAlien" type="Area2D" parent="."]
+light_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageAreaAlien"]
+polygon = PackedVector2Array(-96, -4, -90, -22, -82, -54, -51, -78, 6, -95, 48, -78, 68, -63, 79, -46, 83, -26, 85, -6, 103, 7, 126, 27, 128, 47, 121, 67, 106, 74, 86, 84, 70, 99, 60, 120, 33, 120, 11, 119, -34, 114, -51, 125, -104, 74, -138, 52, -124, 15)

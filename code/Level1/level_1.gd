@@ -2,9 +2,7 @@ class_name level_1
 
 extends Node2D
 
-#@export var municion:Area2D #Referencia a la escena municion
-#@export var municion = preload("res://Municion/municion.tscn")
-
+@export var alien = preload("res://Enemigos/Alien_.tscn")
 @export var asteroide_ = preload("res://Enemigos/asteroide_.tscn")
 @export var municion = preload("res://Municion/municion.tscn")
 

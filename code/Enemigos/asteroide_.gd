@@ -1,9 +1,8 @@
 class_name Asteroide_
 extends CharacterBody2D
 
-#@export var gravity = 100
 var move_velocity = Vector2()  # Cambiamos el nombre de la variable velocity para evitar conflicto
-var screen_size = Vector2()  # Declaramos screen_size como una variable global
+var screen_size = Vector2()
 @export var speed = 150
 @export var float_force = 980
 

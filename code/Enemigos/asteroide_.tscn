@@ -15,15 +15,15 @@ scale = Vector2(0.157812, 0.1475)
 texture = ExtResource("1_yoffp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(168, 3)
+light_mask = 2
+position = Vector2(170, 3)
 scale = Vector2(5.6, 5.68)
 shape = SubResource("CircleShape2D_upg3j")
 
 [node name="DamageArea_asteroide" type="Area2D" parent="."]
+light_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea_asteroide"]
 position = Vector2(168, 3)
 scale = Vector2(5.6, 5.68)
 shape = SubResource("CircleShape2D_upg3j")
-
-[connection signal="body_entered" from="DamageArea_asteroide" to="." method="_on_area_2d_body_entered"]

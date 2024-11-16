@@ -1,13 +1,14 @@
-class_name NaveEspacial
+class_name Spaceship
 extends CharacterBody2D
 
+@export var alien = preload("res://Enemigos/Alien_.tscn")
+@export var asteroide_ = preload("res://Enemigos/asteroide_.tscn")
 signal fired
-signal nave_hurt()
+signal spaceship_hurt()
 var control_disparo = true 
 @export var gravity = 100
 @export var speed = 400
 @export var float_force = 1000
-@export var vida = 1
 
 func _physics_process(delta):
 	
@@ -26,21 +27,17 @@ func _physics_process(delta):
 	#movimiento 
 	var direction =  Input.get_vector("izquierda", "derecha", "arriba", "abajo")
 	velocity = direction * speed
-	
 
 	move_and_slide()
 	
-#func _on_DamageArea_body_entered(body):
-	
 			
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	if body is Asteroide_:
-		vida -= 1
-		if vida <= 0:
-			print("MUERTO")
-			get_tree().quit()  # Cerrar el juego
-				
-				
+	if body is Alien_ or body is Asteroide_:
+		print("ha recibido daño")
+		spaceship_hurt.emit()
+		
+			
+	
 func _process(delta):
 	
 	if Input.is_action_just_pressed("disparar"):

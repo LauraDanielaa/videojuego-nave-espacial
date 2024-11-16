@@ -49,7 +49,9 @@ disparar={
 
 [layer_names]
 
-2d_render/layer_2="enemigos"
+2d_render/layer_1="nave"
+2d_render/layer_2="asteroide"
+2d_render/layer_3="alien"
+2d_render/layer_4="paredes"
 2d_physics/layer_1="jugador"
-2d_physics/layer_2="enemigos"
 2d_physics/layer_3="paredes"
