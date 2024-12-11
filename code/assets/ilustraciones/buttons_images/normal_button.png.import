@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6rflu2w1kaik"
-path="res://.godot/imported/life_heart.png-c4fd1563b83f488a590ed74ed357903b.ctex"
+uid="uid://c6oewg7wa358w"
+path="res://.godot/imported/normal_button.png-c3da83d5bbdf849898ff7ca705469bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ilustraciones/life_heart.png"
-dest_files=["res://.godot/imported/life_heart.png-c4fd1563b83f488a590ed74ed357903b.ctex"]
+source_file="res://assets/ilustraciones/buttons_images/normal_button.png"
+dest_files=["res://.godot/imported/normal_button.png-c3da83d5bbdf849898ff7ca705469bfc.ctex"]
 
 [params]
 

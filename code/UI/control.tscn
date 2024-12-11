@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=3 uid="uid://mp0umafl1hnp"]
+
+[ext_resource type="FontFile" uid="uid://bpu6r7p5mpy0b" path="res://assets/fonts/Minecraft.ttf" id="1_3swjl"]
+[ext_resource type="Texture2D" uid="uid://b0bmaudlo08ij" path="res://assets/ilustraciones/buttons_images/hover_button.png" id="2_1ekrv"]
+[ext_resource type="Texture2D" uid="uid://c6oewg7wa358w" path="res://assets/ilustraciones/buttons_images/normal_button.png" id="3_n4jbi"]
+[ext_resource type="Texture2D" uid="uid://s2c0nk6xch10" path="res://assets/ilustraciones/buttons_images/pressed_button.png" id="4_k80u7"]
+[ext_resource type="Script" path="res://UI/start_button.gd" id="5_xgyb8"]
+[ext_resource type="AudioStream" uid="uid://cxkoa0cr1dipi" path="res://assets/audio/ouch-116112.mp3" id="6_dwt1g"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ff136"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(550, 330, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+angular_velocity_min = -694.1
+angular_velocity_max = 683.74
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="Theme" id="Theme_rd50q"]
+
+[sub_resource type="Theme" id="Theme_xy8gj"]
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_3swjl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72afb"]
+texture = ExtResource("2_1ekrv")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v00x5"]
+texture = ExtResource("3_n4jbi")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0ia7"]
+texture = ExtResource("4_k80u7")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="Theme_mty02"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0.027451)
+Button/fonts/font = ExtResource("1_3swjl")
+Button/styles/hover = SubResource("StyleBoxTexture_72afb")
+Button/styles/normal = SubResource("StyleBoxTexture_v00x5")
+Button/styles/pressed = SubResource("StyleBoxTexture_n0ia7")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(561, 298)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_ff136")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(340, 190)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rd50q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xy8gj")
+text = "SPACESHIP
+GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = SubResource("Theme_mty02")
+text = "    START    "
+script = ExtResource("5_xgyb8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/StartButton"]
+stream = ExtResource("6_dwt1g")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/StartButton" to="PanelContainer/VBoxContainer/StartButton" method="_on_pressed"]

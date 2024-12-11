@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbrpm1myxeqj1"]
 
-[ext_resource type="Texture2D" uid="uid://ctmxlmvihemhb" path="res://ilustraciones/naveEspacial.webp" id="1_1gogd"]
+[ext_resource type="Texture2D" uid="uid://ctmxlmvihemhb" path="res://assets/ilustraciones/naveEspacial.webp" id="1_1gogd"]
 [ext_resource type="Script" path="res://Nave_Espacial/nave_espacial.gd" id="1_kat1t"]
 
 [node name="Spaceship" type="CharacterBody2D"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb7x41livfg3n"
-path="res://.godot/imported/alien_juju.png-1d0ad87aad35c116373106f888860633.ctex"
+uid="uid://cdffre30g3av"
+path="res://.godot/imported/fondo.png-b95bdda563b9e63066d521f561e967aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ilustraciones/alien_juju.png"
-dest_files=["res://.godot/imported/alien_juju.png-1d0ad87aad35c116373106f888860633.ctex"]
+source_file="res://assets/ilustraciones/fondo.png"
+dest_files=["res://.godot/imported/fondo.png-b95bdda563b9e63066d521f561e967aa.ctex"]
 
 [params]
 

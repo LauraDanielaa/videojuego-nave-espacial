@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dgv3365t6yoe5"]
 
 [ext_resource type="Script" path="res://Level1/level_1.gd" id="1_q00a6"]
-[ext_resource type="Texture2D" uid="uid://bb8dcsilymowd" path="res://ilustraciones/Galaxia.png" id="1_vodjq"]
+[ext_resource type="Texture2D" uid="uid://bb8dcsilymowd" path="res://assets/ilustraciones/Galaxia.png" id="1_vodjq"]
 [ext_resource type="PackedScene" uid="uid://cbrpm1myxeqj1" path="res://Nave_Espacial/nave_espacial.tscn" id="2_dhwgb"]
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c47bk7q7n5gqt"
-path="res://.godot/imported/asteroide.png-9c15e276d877c79fa3e34625d2432a01.ctex"
+uid="uid://cmtfjmc8v374h"
+path="res://.godot/imported/municiones.png-43cee94dad036502fcfbd9be1af26679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ilustraciones/asteroide.png"
-dest_files=["res://.godot/imported/asteroide.png-9c15e276d877c79fa3e34625d2432a01.ctex"]
+source_file="res://assets/ilustraciones/municiones.png"
+dest_files=["res://.godot/imported/municiones.png-43cee94dad036502fcfbd9be1af26679.ctex"]
 
 [params]
 

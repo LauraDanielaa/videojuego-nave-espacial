@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmxlmvihemhb"
-path="res://.godot/imported/naveEspacial.webp-872181856ed0c450436af6e67b9866a6.ctex"
+uid="uid://c47bk7q7n5gqt"
+path="res://.godot/imported/asteroide.png-4b7779693c0dd46ca899626545be1f70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ilustraciones/naveEspacial.webp"
-dest_files=["res://.godot/imported/naveEspacial.webp-872181856ed0c450436af6e67b9866a6.ctex"]
+source_file="res://assets/ilustraciones/asteroide.png"
+dest_files=["res://.godot/imported/asteroide.png-4b7779693c0dd46ca899626545be1f70.ctex"]
 
 [params]
 

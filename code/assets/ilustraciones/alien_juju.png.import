@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qg8s7jf4qxj1"
-path="res://.godot/imported/life_heart_empty.png-3a41972c511497ec70f09469c34590b4.ctex"
+uid="uid://cb7x41livfg3n"
+path="res://.godot/imported/alien_juju.png-997f8334f4d11129e7d5e6259f7e32fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ilustraciones/life_heart_empty.png"
-dest_files=["res://.godot/imported/life_heart_empty.png-3a41972c511497ec70f09469c34590b4.ctex"]
+source_file="res://assets/ilustraciones/alien_juju.png"
+dest_files=["res://.godot/imported/alien_juju.png-997f8334f4d11129e7d5e6259f7e32fe.ctex"]
 
 [params]
 

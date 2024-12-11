@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxju454bfhc75"]
 
 [ext_resource type="Script" path="res://Enemigos/alien_.gd" id="1_kl2a7"]
-[ext_resource type="Texture2D" uid="uid://cb7x41livfg3n" path="res://ilustraciones/alien_juju.png" id="1_xt3ej"]
+[ext_resource type="Texture2D" uid="uid://cb7x41livfg3n" path="res://assets/ilustraciones/alien_juju.png" id="1_xt3ej"]
 
 [node name="Alien_" type="CharacterBody2D"]
 light_mask = 4
