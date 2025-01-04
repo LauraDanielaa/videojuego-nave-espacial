@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4ot5eu1h6rf6"]
 
 [ext_resource type="Texture2D" uid="uid://cdffre30g3av" path="res://assets/ilustraciones/fondo.png" id="1_3t717"]
-[ext_resource type="Script" path="res://UI/life.gd" id="1_r22ms"]
+[ext_resource type="Script" path="res://UI/cat_life/life.gd" id="1_r22ms"]
 [ext_resource type="Texture2D" uid="uid://c6rflu2w1kaik" path="res://assets/ilustraciones/life_heart.png" id="2_se4w4"]
 
 [node name="Life" type="CanvasLayer"]

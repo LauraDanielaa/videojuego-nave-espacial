@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxju454bfhc75" path="res://Enemigos/Alien_.tscn" id="3_i75vx"]
 [ext_resource type="PackedScene" uid="uid://dqbrx2mgxius3" path="res://Enemigos/asteroide_.tscn" id="4_7mqxw"]
 [ext_resource type="PackedScene" uid="uid://ctqw1o4u4jvwg" path="res://Municion/municion.tscn" id="5_6krxe"]
-[ext_resource type="PackedScene" uid="uid://c4ot5eu1h6rf6" path="res://UI/life.tscn" id="7_ano3s"]
+[ext_resource type="PackedScene" uid="uid://c4ot5eu1h6rf6" path="res://UI/cat_life/life.tscn" id="7_ano3s"]
 [ext_resource type="Script" path="res://Level1/game_controller.gd" id="7_wjr5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6v8o"]

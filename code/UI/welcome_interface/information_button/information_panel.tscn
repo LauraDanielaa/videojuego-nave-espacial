@@ -1,0 +1,280 @@
+[gd_scene load_steps=25 format=3 uid="uid://bt3umb5c7rdsh"]
+
+[ext_resource type="Script" path="res://UI/welcome_interface/information_button/button.gd" id="1_225bx"]
+[ext_resource type="Texture2D" uid="uid://edh348pmgdoa" path="res://UI/welcome_interface/information_button/images/exit.png" id="2_0pinx"]
+[ext_resource type="Script" path="res://UI/welcome_interface/information_button/right_panel_text.gd" id="2_2x0ta"]
+[ext_resource type="AudioStream" uid="uid://daooxnkwr1dmg" path="res://assets/audio/ui_doc_open.ogg" id="3_hnyhw"]
+[ext_resource type="Texture2D" uid="uid://bvsvhgvnv50am" path="res://UI/welcome_interface/information_button/images/hover_exit.jpg" id="3_xfsie"]
+[ext_resource type="Script" path="res://UI/welcome_interface/information_button/exit_button.gd" id="4_cs8gq"]
+[ext_resource type="AudioStream" uid="uid://b2uvcgvymkn44" path="res://assets/audio/ui_doc_close.ogg" id="7_7read"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4j8"]
+bg_color = Color(0.847059, 0.576471, 0.686275, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_71u13"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cm4j8")
+
+[sub_resource type="Theme" id="Theme_4ra4q"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = null
+Label/styles/normal = null
+
+[sub_resource type="Theme" id="Theme_ubwcp"]
+Button/colors/font_color = Color(0.98811, 0.963428, 0.972175, 1)
+Button/colors/font_hover_color = Color(0.299387, 0.135429, 0.208611, 1)
+Button/fonts/font = null
+
+[sub_resource type="Resource" id="Resource_1d0ky"]
+script = ExtResource("2_2x0ta")
+title = "Controls"
+help_text = ""
+
+[sub_resource type="Resource" id="Resource_0avr1"]
+script = ExtResource("2_2x0ta")
+title = "Main Actions"
+help_text = ""
+
+[sub_resource type="Resource" id="Resource_q36p6"]
+script = ExtResource("2_2x0ta")
+title = "AP"
+help_text = ""
+
+[sub_resource type="Resource" id="Resource_vugtf"]
+script = ExtResource("2_2x0ta")
+title = "GUI"
+help_text = ""
+
+[sub_resource type="Resource" id="Resource_7e725"]
+script = ExtResource("2_2x0ta")
+title = "FireArms"
+help_text = ""
+
+[sub_resource type="Resource" id="Resource_flh16"]
+script = ExtResource("2_2x0ta")
+title = "Blades"
+help_text = "[b]Blades[/b] 
+[table=2][cell][img=60%]res://assets/sprites/Blades1.png[/img][/cell]
+[cell]
+[font_size=11]To use a grenade, pull the pin while holding the lever down.[/font_size]
+[/cell]
+[cell][img=60%]res://assets/sprites/blade2.png[/img][/cell]
+[cell][font_size=6] [/font_size][left]This second type of blade, although less common, has a higher level of damage to its opponents.[/left][/cell]
+[/table][font_size=11]In a game, blades can be versatile weapons used for both offense and defense. Players can use them to perform quick, light attacks that deal damage in rapid succession or execute powerful strikes with slower, more deliberate movements. Blades are often effective in close combat, allowing players to dodge or parry incoming attacks while staying mobile[/font_size]
+
+[p]To make the most of blades, focus on speed and precision. Timing your attacks and dodges is key to outmaneuvering enemies. Some games may also let you upgrade blades with special abilities, like increasing damage, adding elemental effects, or enhancing critical hit chances.[/p]
+
+
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rccjp"]
+bg_color = Color(0.593419, 0.307394, 0.433378, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.0232807, 0.0183307, 0.0114123, 1)
+
+[sub_resource type="Theme" id="Theme_p8se5"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_rccjp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7owf"]
+
+[sub_resource type="Theme" id="Theme_jttvm"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e7owf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcibf"]
+bg_color = Color(0.847059, 0.576471, 0.686275, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_pvvsn"]
+default_base_scale = 0.85
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
+
+[sub_resource type="Theme" id="Theme_la11w"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[node name="InfoPanel" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -231.0
+offset_right = 441.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(34, 350)
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_71u13")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="TopicsLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4ra4q")
+text = "TOPICS"
+horizontal_alignment = 1
+
+[node name="ControlsButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "CONTROLS
+"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_1d0ky")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="MainActionsButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "MAIN ACTIONS"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_0avr1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="APButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "APS AND MPS"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_q36p6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="GUIButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "GUI
+"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_vugtf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="FirearmsButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "FIREARMS"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_7e725")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="BladesButton" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "BLADES
+"
+alignment = 0
+script = ExtResource("1_225bx")
+right_panel_text = SubResource("Resource_flh16")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton"]
+stream = ExtResource("3_hnyhw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ExitPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_p8se5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitPanel"]
+layout_mode = 2
+theme = SubResource("Theme_jttvm")
+alignment = 2
+
+[node name="ExitButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture_normal = ExtResource("2_0pinx")
+texture_hover = ExtResource("3_xfsie")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_cs8gq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton"]
+stream = ExtResource("7_7read")
+
+[node name="RightPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme = SubResource("Theme_pvvsn")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/RightPanel/CenterContainer"]
+custom_minimum_size = Vector2(500, 380)
+layout_mode = 2
+theme = SubResource("Theme_la11w")
+bbcode_enabled = true
+text = "[b]Help Panel [/b] 
+
+[font_size=11]If you have questions about the game, here you can find information about the elements that make up the game and how to play.
+
+In this panel you will find each piece of information in a sectioned form in each of the buttons on the left side.:[/font_size]
+
+[font_size=11][ul bullet=-]
+ [hint=Information about the buttons you should use to move around the game][color= ORANGE_RED]Controls[/color][/hint]
+ [color= ORANGE_RED]Main Actions[/color] 
+ [color= ORANGE_RED]Aps and Mps[/color] 
+ [color= ORANGE_RED]Fire Arms and ammunition[/color] 
+ [color= ORANGE_RED]Blades[/color] 
+[/ul][/font_size]
+
+
+"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton" to="MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" method="_on_pressed"]

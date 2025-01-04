@@ -1,40 +1,105 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbrpm1myxeqj1"]
+[gd_scene load_steps=13 format=3 uid="uid://cbrpm1myxeqj1"]
 
-[ext_resource type="Texture2D" uid="uid://ctmxlmvihemhb" path="res://assets/ilustraciones/naveEspacial.webp" id="1_1gogd"]
 [ext_resource type="Script" path="res://Nave_Espacial/nave_espacial.gd" id="1_kat1t"]
+[ext_resource type="Texture2D" uid="uid://b6avy3848dr6u" path="res://assets/ilustraciones/cat_shooting_to_left.png" id="2_tjok0"]
+[ext_resource type="Texture2D" uid="uid://veq320q2s88d" path="res://assets/ilustraciones/cat_shooting_to_right.png" id="3_n3623"]
 
-[node name="Spaceship" type="CharacterBody2D"]
-position = Vector2(19, 671)
+[sub_resource type="AtlasTexture" id="AtlasTexture_23d32"]
+atlas = ExtResource("2_tjok0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8m3t"]
+atlas = ExtResource("2_tjok0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wqmt"]
+atlas = ExtResource("2_tjok0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i484"]
+atlas = ExtResource("3_n3623")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u653q"]
+atlas = ExtResource("3_n3623")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtn5g"]
+atlas = ExtResource("3_n3623")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pqy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23d32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8m3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wqmt")
+}],
+"loop": true,
+"name": &"cat_shooting_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i484")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u653q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtn5g")
+}],
+"loop": true,
+"name": &"cat_shooting_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4w0f"]
+radius = 475.008
+height = 1603.62
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7huyy"]
+radius = 482.205
+height = 1627.92
+
+[node name="SpaceCatTrooper" type="CharacterBody2D"]
 scale = Vector2(0.138945, 0.0823137)
 collision_mask = 14
 script = ExtResource("1_kat1t")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-79.168, -36.4459)
+scale = Vector2(7.92654, 12.3686)
+sprite_frames = SubResource("SpriteFrames_6pqy4")
+animation = &"cat_shooting_right"
+frame_progress = 0.472359
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-100.759, 12.1486)
+shape = SubResource("CapsuleShape2D_t4w0f")
+
 [node name="bullet_position" type="Marker2D" parent="."]
-position = Vector2(1014.79, -12.1487)
+position = Vector2(518.191, -1.90735e-06)
 scale = Vector2(188.967, -30.8565)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.938, 0.438)
-texture = ExtResource("1_1gogd")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.938, 0.438)
-polygon = PackedVector2Array(-391, -109, -300, -502, -194, -773, -87.9449, -958.832, 85.5354, -975.245, 183, -713, 289, -441, 349, -230, 364, -18, 546, 238, 485, 329, 274, 314, 153, 374, 228, 540, 228, 691, 108, 691, 153, 827, 32, 782, -13, 903, -74, 812, -179, 812, -209, 722, -194, 571, -225, 374, -436, 374, -557, 284)
 
 [node name="Timer_bullet" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.25
 
 [node name="DamageArea" type="Area2D" parent="."]
+position = Vector2(-107.956, -3.8147e-06)
 collision_mask = 6
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea"]
-visibility_layer = 6
-rotation = 1.5708
-scale = Vector2(0.938, 0.438)
-polygon = PackedVector2Array(-391, -109, -300, -502, -194, -773, -90.6621, -936.607, 116.563, -936.609, 220.177, -722.997, 336.743, -443.659, 375.598, -213.615, 364, -18, 582.825, 246.471, 556.922, 345.062, 284.938, 377.927, 194.275, 394.36, 246.082, 575.108, 246.083, 673.699, 168.373, 739.426, 181.325, 838.016, 64.7598, 887.312, -25.9014, 985.903, -116.563, 870.882, -207.225, 854.451, -246.079, 739.429, -233.129, 591.544, -259.032, 410.795, -453.307, 410.797, -582.823, 312.207)
+[node name="DamageAreaCollision" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(7.19708, 0)
+shape = SubResource("CapsuleShape2D_7huyy")
+
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="timeout" from="Timer_bullet" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

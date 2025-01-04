@@ -13,7 +13,7 @@ config_version=5
 config/name="videojuego nave espacial"
 run/main_scene="res://Level1/level_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://UI/icon.svg"
 
 [input]
 
@@ -55,3 +55,7 @@ disparar={
 2d_render/layer_4="paredes"
 2d_physics/layer_1="jugador"
 2d_physics/layer_3="paredes"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

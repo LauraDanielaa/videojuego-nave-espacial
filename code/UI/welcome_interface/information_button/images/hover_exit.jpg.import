@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmxlmvihemhb"
-path="res://.godot/imported/naveEspacial.webp-c5ab9e43d1e55368c7a8f292ceaafc91.ctex"
+uid="uid://bvsvhgvnv50am"
+path="res://.godot/imported/hover_exit.jpg-2708f3a3a8f9d6fdfc02c158d0afb5a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ilustraciones/naveEspacial.webp"
-dest_files=["res://.godot/imported/naveEspacial.webp-c5ab9e43d1e55368c7a8f292ceaafc91.ctex"]
+source_file="res://UI/welcome_interface/information_button/images/hover_exit.jpg"
+dest_files=["res://.godot/imported/hover_exit.jpg-2708f3a3a8f9d6fdfc02c158d0afb5a8.ctex"]
 
 [params]
 

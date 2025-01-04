@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxju454bfhc75"]
 
 [ext_resource type="Script" path="res://Enemigos/alien_.gd" id="1_kl2a7"]
-[ext_resource type="Texture2D" uid="uid://cb7x41livfg3n" path="res://assets/ilustraciones/alien_juju.png" id="1_xt3ej"]
+[ext_resource type="Texture2D" uid="uid://cskg61iinx5mu" path="res://assets/ilustraciones/alien_pixel.png" id="2_ihg82"]
 
 [node name="Alien_" type="CharacterBody2D"]
 light_mask = 4
@@ -10,15 +10,17 @@ collision_layer = 2
 script = ExtResource("1_kl2a7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.76, 0.769821)
-texture = ExtResource("1_xt3ej")
+position = Vector2(0, -5.00001)
+scale = Vector2(0.528938, 0.516083)
+texture = ExtResource("2_ihg82")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 light_mask = 2
-polygon = PackedVector2Array(-90, 1, -85, -35, -75, -60, -52, -82, -19, -94, 20, -96, 50, -80, 76, -54, 87, -29, 85, 1, 113, 11, 131, 28, 130, 54, 118, 71, 94, 78, 76, 88, 65, 100, 60, 115, 40, 123, 27, 114, 4, 117, -16, 115, -32, 113, -48, 123, -61, 113, -70, 100, -87, 85, -106, 71, -121, 67, -137, 49, -135, 36, -126, 18)
+polygon = PackedVector2Array(-100, -5, -76.5625, -11.6667, -60.9375, -23.3333, -46.875, -43.3333, -12.5, -60, -6.25, -108.333, 6.25, -110, 26.5625, -65, 56.25, -35, 75, -6.66667, 110.938, -1.66667, 148.438, 18.3333, 148.438, 43.3333, 110.938, 60, 90.625, 66.6667, 76, 88, 56.25, 93.3333, 40.625, 95, 17.1875, 98.3333, 12.5, 105, -6.25, 105, -12.5, 96.6667, -28.125, 95, -43.75, 91.6667, -57.8125, 98.3333, -76.5625, 81.6667, -89.0625, 71.6667, -103.125, 60, -115.625, 58.3333, -129.688, 56.6667, -146.875, 38.3333, -148.438, 15)
 
 [node name="DamageAreaAlien" type="Area2D" parent="."]
 light_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageAreaAlien"]
-polygon = PackedVector2Array(-96, -4, -90, -22, -82, -54, -51, -78, 6, -95, 48, -78, 68, -63, 79, -46, 83, -26, 85, -6, 103, 7, 126, 27, 128, 47, 121, 67, 106, 74, 86, 84, 70, 99, 60, 120, 33, 120, 11, 119, -34, 114, -51, 125, -104, 74, -138, 52, -124, 15)
+light_mask = 2
+polygon = PackedVector2Array(-100, -5, -76.5625, -11.6667, -60.9375, -23.3333, -46.875, -43.3333, -12.5, -60, -6.25, -108.333, 6.25, -110, 26.5625, -65, 56.25, -35, 75, -6.66667, 110.938, -1.66667, 148.438, 18.3333, 148.438, 43.3333, 110.938, 60, 90.625, 66.6667, 76, 88, 56.25, 93.3333, 40.625, 95, 17.1875, 98.3333, 12.5, 105, -6.25, 105, -12.5, 96.6667, -28.125, 95, -43.75, 91.6667, -57.8125, 98.3333, -76.5625, 81.6667, -89.0625, 71.6667, -103.125, 60, -115.625, 58.3333, -129.688, 56.6667, -146.875, 38.3333, -148.438, 15)

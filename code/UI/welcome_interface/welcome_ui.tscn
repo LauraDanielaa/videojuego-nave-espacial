@@ -1,0 +1,348 @@
+[gd_scene load_steps=46 format=3 uid="uid://mp0umafl1hnp"]
+
+[ext_resource type="Script" path="res://UI/welcome_interface/welcome_ui.gd" id="1_a0xtb"]
+[ext_resource type="Script" path="res://UI/welcome_interface/cat_ui.gd" id="2_6alxi"]
+[ext_resource type="Texture2D" uid="uid://b6avy3848dr6u" path="res://assets/ilustraciones/cat_shooting_to_left.png" id="3_a6ai8"]
+[ext_resource type="Texture2D" uid="uid://veq320q2s88d" path="res://assets/ilustraciones/cat_shooting_to_right.png" id="4_k5b4a"]
+[ext_resource type="Script" path="res://UI/welcome_interface/asteroid_ui.gd" id="5_828rb"]
+[ext_resource type="Texture2D" uid="uid://cm1fdw2viopyl" path="res://assets/ilustraciones/asteroid_pixel.png" id="6_e7px2"]
+[ext_resource type="Script" path="res://UI/welcome_interface/asteroid_ui_2.gd" id="7_er3r3"]
+[ext_resource type="FontFile" uid="uid://40mb23tr3hai" path="res://assets/fonts/catcut/Catcut.ttf" id="8_wrb0f"]
+[ext_resource type="FontFile" uid="uid://d2inosf5xcqcs" path="res://assets/fonts/spy_agency/spyagency3dital.ttf" id="9_0amgv"]
+[ext_resource type="FontFile" uid="uid://bpu6r7p5mpy0b" path="res://assets/fonts/Minecraft.ttf" id="10_sl41x"]
+[ext_resource type="Texture2D" uid="uid://b0bmaudlo08ij" path="res://assets/ilustraciones/buttons_images/hover_button.png" id="11_jcpfv"]
+[ext_resource type="Texture2D" uid="uid://c6oewg7wa358w" path="res://assets/ilustraciones/buttons_images/normal_button.png" id="12_1auab"]
+[ext_resource type="Texture2D" uid="uid://s2c0nk6xch10" path="res://assets/ilustraciones/buttons_images/pressed_button.png" id="13_018rm"]
+[ext_resource type="Script" path="res://UI/welcome_interface/start_button.gd" id="14_2ngax"]
+[ext_resource type="AudioStream" uid="uid://cxkoa0cr1dipi" path="res://assets/audio/ouch-116112.mp3" id="15_pfpof"]
+[ext_resource type="AudioStream" uid="uid://dc862tjpp3uaq" path="res://assets/audio/music_background_ui.mp3" id="16_5fvv3"]
+[ext_resource type="Script" path="res://UI/welcome_interface/information_button/information_button.gd" id="16_hogbh"]
+[ext_resource type="PackedScene" uid="uid://bt3umb5c7rdsh" path="res://UI/welcome_interface/information_button/information_panel.tscn" id="17_qmgoc"]
+[ext_resource type="Script" path="res://UI/welcome_interface/background_music.gd" id="17_xwr5y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ws8m"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iba7w"]
+atlas = ExtResource("3_a6ai8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k7l6"]
+atlas = ExtResource("3_a6ai8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utvrq"]
+atlas = ExtResource("3_a6ai8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grbmt"]
+atlas = ExtResource("4_k5b4a")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gm3q"]
+atlas = ExtResource("4_k5b4a")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj2l4"]
+atlas = ExtResource("4_k5b4a")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itaqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iba7w")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_8k7l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utvrq")
+}],
+"loop": true,
+"name": &"cat_shooting_to_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grbmt")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_3gm3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj2l4")
+}],
+"loop": true,
+"name": &"cat_shooting_to_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owddj"]
+radius = 66.0
+height = 140.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7aktw"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8g1uv"]
+radius = 96.5494
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nqknk"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="Theme" id="Theme_rd50q"]
+
+[sub_resource type="Theme" id="Theme_mvfby"]
+Label/colors/font_color = Color(0.847169, 0.578069, 0.685304, 1)
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("8_wrb0f")
+
+[sub_resource type="Theme" id="Theme_xy8gj"]
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("9_0amgv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72afb"]
+texture = ExtResource("11_jcpfv")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v00x5"]
+texture = ExtResource("12_1auab")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0ia7"]
+texture = ExtResource("13_018rm")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="Theme_mty02"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0.027451)
+Button/fonts/font = ExtResource("10_sl41x")
+Button/styles/hover = SubResource("StyleBoxTexture_72afb")
+Button/styles/normal = SubResource("StyleBoxTexture_v00x5")
+Button/styles/pressed = SubResource("StyleBoxTexture_n0ia7")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d3j68"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujj1f"]
+size = Vector2(1377, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm8m3"]
+size = Vector2(93, 817.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdfhf"]
+size = Vector2(1389.5, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twxfa"]
+size = Vector2(139, 848)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te4e7"]
+size = Vector2(337, 189)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ff136"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(550, 330, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+angular_velocity_min = -694.1
+angular_velocity_max = 683.74
+gravity = Vector3(0, 98, 0)
+
+[node name="WelcomeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0xtb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CatUI" type="RigidBody2D" parent="Node2D"]
+disable_mode = 2
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_5ws8m")
+gravity_scale = 0.0
+script = ExtResource("2_6alxi")
+
+[node name="CatAnimation" type="AnimatedSprite2D" parent="Node2D/CatUI"]
+texture_filter = 1
+position = Vector2(146, 506)
+sprite_frames = SubResource("SpriteFrames_itaqm")
+animation = &"cat_shooting_to_right"
+frame_progress = 0.465524
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CatUI"]
+position = Vector2(142, 509)
+shape = SubResource("CapsuleShape2D_owddj")
+
+[node name="AsteroidUI" type="RigidBody2D" parent="Node2D"]
+collision_layer = 2
+collision_mask = 7
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_7aktw")
+gravity_scale = 0.0
+script = ExtResource("5_828rb")
+
+[node name="AsteroidSprite" type="Sprite2D" parent="Node2D/AsteroidUI"]
+position = Vector2(281, 177)
+scale = Vector2(0.404185, 0.354651)
+texture = ExtResource("6_e7px2")
+
+[node name="AsteroidCollision" type="CollisionShape2D" parent="Node2D/AsteroidUI"]
+position = Vector2(284, 179)
+scale = Vector2(0.404185, 0.354651)
+shape = SubResource("CircleShape2D_8g1uv")
+
+[node name="AsteroidUI2" type="RigidBody2D" parent="Node2D"]
+collision_layer = 2
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_nqknk")
+gravity_scale = 0.0
+script = ExtResource("7_er3r3")
+
+[node name="AsteroidSprite2" type="Sprite2D" parent="Node2D/AsteroidUI2"]
+position = Vector2(925, 502)
+scale = Vector2(0.62286, 0.605772)
+texture = ExtResource("6_e7px2")
+
+[node name="AsteroidCollision2" type="CollisionShape2D" parent="Node2D/AsteroidUI2"]
+position = Vector2(929.755, 504.23)
+scale = Vector2(0.610217, 0.572673)
+shape = SubResource("CircleShape2D_8g1uv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(340, 190)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -95.0
+offset_right = 170.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rd50q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(340, 190)
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_mvfby")
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "<SPACE CAT>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xy8gj")
+text = "TROOPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = SubResource("Theme_mty02")
+text = "    START    "
+script = ExtResource("14_2ngax")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/StartButton"]
+stream = ExtResource("15_pfpof")
+
+[node name="InfoButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = SubResource("Theme_mty02")
+text = "    ABOUT IT     "
+script = ExtResource("16_hogbh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelContainer/VBoxContainer/InfoButton"]
+stream = ExtResource("15_pfpof")
+
+[node name="InfoPanel" parent="PanelContainer/VBoxContainer/InfoButton" instance=ExtResource("17_qmgoc")]
+
+[node name="ViewportFrame" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_d3j68")
+
+[node name="Frame1" type="CollisionShape2D" parent="ViewportFrame"]
+position = Vector2(604.5, -31.5)
+shape = SubResource("RectangleShape2D_ujj1f")
+
+[node name="Frame2" type="CollisionShape2D" parent="ViewportFrame"]
+position = Vector2(-49, 347.25)
+shape = SubResource("RectangleShape2D_fm8m3")
+
+[node name="Frame3" type="CollisionShape2D" parent="ViewportFrame"]
+position = Vector2(601.25, 720)
+shape = SubResource("RectangleShape2D_wdfhf")
+
+[node name="Frame4" type="CollisionShape2D" parent="ViewportFrame"]
+position = Vector2(1222.5, 363)
+shape = SubResource("RectangleShape2D_twxfa")
+
+[node name="PanelCollision" type="CollisionShape2D" parent="ViewportFrame"]
+position = Vector2(576.5, 327.5)
+shape = SubResource("RectangleShape2D_te4e7")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_5fvv3")
+autoplay = true
+script = ExtResource("17_xwr5y")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(561, 298)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_ff136")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/StartButton" to="PanelContainer/VBoxContainer/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/StartButton" to="BackgroundMusic" method="_on_start_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/InfoButton" to="PanelContainer/VBoxContainer/InfoButton" method="_on_pressed"]
+[connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_finished"]
